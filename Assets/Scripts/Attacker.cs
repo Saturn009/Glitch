@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    [Range(0f,1f)]
     float currentSpeed = 1f;
+    float speed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,9 @@ public class Attacker : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime); 
+    }
+    private void SetMovementSpeed (float speed)
+    {
+        currentSpeed = speed;
     }
 }
